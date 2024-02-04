@@ -92,12 +92,9 @@ function clickImage(event) {
   event.preventDefault();
 
   if (event.target.closest("img")) {
-    
-    const original = event.target.dataset.source;
-    const description = event.target.getAttribute("alt");
 
     const modal = basicLightbox.create(
-      `<img class="modal-img" src="${original}" alt="${description}">`,
+      `<img src="${event.target.getAttribute("data-source")}" alt="${event.target.getAttribute("alt")}">`,
     );
     modal.show();
   }
